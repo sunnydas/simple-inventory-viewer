@@ -1,0 +1,30 @@
+<div class="container" style="padding: 10px;">
+    <div *ngIf="inventory.length != 0" style="padding: 350px;">
+    </div>
+    <div *ngIf="inventory.length === 0" style="padding: 200px;">
+    </div>	
+	<div  class="mat-elevation-z8" style="padding: 10px; align center:center">
+			<mat-table [dataSource]="inventory">
+				<mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+				<mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+				<ng-container  matColumnDef="sku">
+				  <mat-header-cell *matHeaderCellDef>Item SKU</mat-header-cell>
+				  <mat-cell *matCellDef="let row">{{row.sku}}</mat-cell>
+				</ng-container>
+				<ng-container  matColumnDef="name">
+				  <mat-header-cell *matHeaderCellDef>Item Name</mat-header-cell>
+				  <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+				</ng-container>
+				<ng-container  matColumnDef="count">
+				  <mat-header-cell *matHeaderCellDef>Item Count</mat-header-cell>
+				  <mat-cell *matCellDef="let row">{{row.count}}</mat-cell>
+				</ng-container>
+			</mat-table>	
+	</div> 
+	<div *ngIf="inventory.length != 0" style="padding: 10px; float: right;">
+	            <button mat-raised-button color="primary" (click)="nextPage()">Next</button>
+	</div>
+	<div *ngIf="page > 0" style="padding: 10px; float: right;">
+	            <button mat-raised-button color="primary" (click)="prevPage()">Prev</button>
+	</div>
+</div>

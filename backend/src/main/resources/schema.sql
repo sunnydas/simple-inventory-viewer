@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS inventory;
+
+CREATE TABLE inventory (
+  sku VARCHAR(40) NOT NULL PRIMARY KEY,
+  name VARCHAR(250) NOT NULL,
+  count INT DEFAULT 0
+);
