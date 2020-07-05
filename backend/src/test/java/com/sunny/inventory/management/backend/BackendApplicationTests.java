@@ -62,22 +62,6 @@ class BackendApplicationTests {
 						&& inventoryItemDTO.getName() != null));
 	}
 
-	@Test
-	public void testGetAllInventoryItemsPagedInvalidPageIndex() throws Exception {
-		MvcResult mvcResult =
-				mockMvc.perform
-						(get(BACKEND_RES_PATH).param("page",
-								String.valueOf(-1)).
-								param("size",
-										DEF_PAGE_SIZE)).
-						andExpect(status().isOk()).andReturn();
-		List<InventoryItemDTO> inventoryItemDTOList = convertToInventortDTOs(mvcResult);
-		assertNotNull(inventoryItemDTOList);
-		inventoryItemDTOList.forEach(inventoryItemDTO -> assertTrue(
-				inventoryItemDTO.getSku() != null
-						&& inventoryItemDTO.getName() != null));
-	}
-
 	private List<InventoryItemDTO> convertToInventortDTOs(MvcResult mvcResult)
 			throws com.fasterxml.jackson.core.JsonProcessingException,
 			UnsupportedEncodingException {
