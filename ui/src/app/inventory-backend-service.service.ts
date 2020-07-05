@@ -17,7 +17,7 @@ export class InventoryBackendServiceService {
 		var response = this.httpClient.get(this.INVENTORY_BACKEND_API_BASE_URL,{
           params: httpParams
         });
-		console.log(" response " + response);
+		//console.log(" response " + response);
 		return response;
 	}
 }

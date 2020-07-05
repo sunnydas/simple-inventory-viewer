@@ -18,7 +18,7 @@ export class InventoryTableComponent implements OnInit {
    
   ngOnInit(): void {
 	  this.inventoryService.sendGetRequest(this.page.toString(),this.size.toString()).subscribe((data: any[])=>{
-      console.log(data);
+      //console.log(data);
       this.inventory = data;
     })  
   }
@@ -26,7 +26,7 @@ export class InventoryTableComponent implements OnInit {
   nextPage(){
 	this.page += 1;	
 	this.inventoryService.sendGetRequest(this.page.toString(),this.size.toString()).subscribe((data: any[])=>{
-      console.log(data);
+      //console.log(data);
       this.inventory = data;
     })  
   }
@@ -34,7 +34,7 @@ export class InventoryTableComponent implements OnInit {
   prevPage(){
 	this.page = Math.max(this.page - 1,0);	
 	this.inventoryService.sendGetRequest(this.page.toString(),this.size.toString()).subscribe((data: any[])=>{
-      console.log(data);
+      //console.log(data);
       this.inventory = data;
     })  
   }  
