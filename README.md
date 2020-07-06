@@ -6,6 +6,7 @@
 3. Backend exposes a single endpoint to fetch inventory items.
 4. Inventory data is loaded via data.sql and no endpoints exist for CUD of inventory records.
 5. Embedded container is used for backend service.
+6. H2 is the in memory database chosen for this application.
 
 
 ## Description 
